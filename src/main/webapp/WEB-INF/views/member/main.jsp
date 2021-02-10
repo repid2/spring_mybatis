@@ -1,33 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인 페이지</title>
+<link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/member.css" />
+
 </head>
 <body>
-	<div>
-		<form action="member/login.do" method="post" id="login_frm">
-			<div class="login_input">
-				<div class="login_input2">
-					<span><input type="text" id="user_id" name="user_id" id="user_id"/></label></span>
+	<div class="container">
+		<div class="login_frm_box">
+			<form action="member/login.do" method="post" id="login_frm" class="form-horizontal">
+				<div class="form-group login_input">
+				    <div class="col-sm-12">
+				    		<input type="text" class="form-control" name="userId" id="userId" placeholder="아이디를 입력하세요">
+					</div>
+				</div>	
+				<div class="form-group login_input">
+		    		<div class="col-sm-12">
+				    	<input type="password" class="form-control" name="userPw" id="userPw" placeholder="비밀번호를 입력하세요">
+					</div>
+				</div>	
+				<div class="form-group login_input">
+					<div class="login_btn col-sm-12">
+						<input type="submit" class="btn btn-primary" value="로그인" id="login_submit" />
+						<button type="button" class="btn btn-primary" onclick="location.href='/member/reg.do'">회원가입</button>
+					</div>
 				</div>
-			</div>
-			<div class="login_input">
-				<div class="login_input2">
-					<span><input type="password" name="user_pw" id="user_pw"/></span>
-				</div>
-			</div>
-			<div class="login_input">
-				<div class="login_btn">
-					<input type="submit" value="로그인" id="login_submit" />
-					<input type="reset" value="초기화" />
-				</div>
-			</div>
-			
-		</form>
+			</form>
+		</div>
 	</div>
 
+<script src="/resources/js/jquery-3.5.1.min.js"></script>
+<script src="/resources/js/bootstrap.js"></script>
 </body>
+
 </html>

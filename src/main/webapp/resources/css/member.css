@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.login_frm_box {
+	 position:absolute;
+	 top: calc(50% - 105px);
+     left: calc(50% - 100px); 
+} 
+
+.reg_frm_box {
+	 position:relative;
+	 top: calc(50% - 435px);
+     left: calc(50% - 555px);
+	
+}
+
+.login_btn {
+	text-align:center;
+	
+}

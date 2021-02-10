@@ -25,13 +25,7 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 	
 	@Override
-	public int memberCnt() {
-		
-		return sqlSession.selectOne(namespace+".memberCnt");
-	}
-
-	@Override
-	public boolean checkPw(String user_id, String user_pw) {
+	public boolean checkPw(String user_id, String user_pw) {		// 로그인
 		// TODO Auto-generated method stub
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("user_id", user_id);
@@ -46,12 +40,18 @@ public class MemberDAOImpl implements MemberDAO {
 		else
 			return false;
 		
+	}
+	
+
+	@Override
+	public int memberCnt() {										// 회원 수 
 		
+		return sqlSession.selectOne(namespace+".memberCnt");
 	}
 	
 	@Override
 	public void insertMember(MemberDTO dto) {
-		sqlSession.insert(namespace+".insertMember");
+		sqlSession.insert(namespace+".insertMember",dto);
 	}
 
 	@Override
@@ -71,9 +71,4 @@ public class MemberDAOImpl implements MemberDAO {
 		sqlSession.delete(namespace+".deleteMember", user_id);
 		
 	}
-
-
-
-	
-	
 }

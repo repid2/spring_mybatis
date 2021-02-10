@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.joonbread.springmybatis.member.repository.MemberDTO;
 import com.joonbread.springmybatis.member.service.MemberService;
@@ -19,7 +21,7 @@ import com.joonbread.springmybatis.member.service.MemberService;
 public class MemberController {
 
 	// 기록 확인용
-	// private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 
 	@Inject
 	private MemberService memberService;
@@ -52,35 +54,47 @@ public class MemberController {
 	public String memberList(Model model) {
 
 		List<MemberDTO> list = memberService.memberList();
+		int cnt = memberService.memberCnt();
 		
+		System.out.println(cnt);
 		model.addAttribute("list", list);
+		model.addAttribute("cnt",cnt);
 
 		return "member/list";
 	}
 
-	// 회원 총 인원수 출력
-	@RequestMapping(value = "/member/cnt.do")
-	public int memberCnt() {
-		int cnt = memberService.memberCnt();
+	// 회원 가입 페이지 이동
+	@RequestMapping(value="/member/reg.do")
+	public String memberReg() {
 		
-		return cnt;
-
+		return "member/reg";
 	}
-
+	
+	// 회원 가입 진행
+	@RequestMapping(value="/member/regUpdate.do", method=RequestMethod.POST)
+	public String memberReg(MemberDTO dto) {
+		
+		memberService.insertMember(dto);
+		
+		logger.info("회원가입 성공");
+		return "redirect:/main.do";
+		
+	}
+	
 	// 정보 작성 페이지
 	@RequestMapping(value = "/member/write.do")
 	public String memberWrite() {
-
+		
 		return "member/write";
 
 	}
 
 	// 회원 정보 삽입
-	@RequestMapping("/member/insert.do")
+	@RequestMapping(value= "/member/insert.do", method=RequestMethod.POST )
 	public String memberInsert(@ModelAttribute MemberDTO dto) {
-
+		
 		memberService.insertMember(dto);
-
+		logger.info("회원가입 성공");
 		return "redirect:/member/list.do";
 
 	}

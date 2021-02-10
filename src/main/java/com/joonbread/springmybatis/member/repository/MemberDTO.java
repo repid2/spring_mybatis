@@ -4,35 +4,35 @@ import java.util.Date;
 
 public class MemberDTO {
 
-	private String userId ; 
-	private String userPw ; 
-	private String userName ; 
-	private String userEmail; 
-	private String userPhone; 
-	private String userGender; 
-	private Date userRegDate;
-	private Date userUpdateDate;
-	
-	public MemberDTO() {
-	
-	}
-	
-	
+	private String userId;
+	private String userPw;
+	private String userName;
+	private String userNick;
+	private String userEmail;
+	private String userPhone;
+	private String userGender;
+	private String userRegDate;
+	private String userCreateDate;
+	private String userUpdateDate;
 
-	public MemberDTO(String userId, String userPw, String userName, String userEmail, String userPhone,
-			String userGender, Date userRegDate, Date userUpdateDate) {
+	public MemberDTO() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public MemberDTO(String userId, String userPw, String userName, String userNick, String userEmail, String userPhone,
+			String userGender, String userRegDate, String userCreateDate, String userUpdateDate) {
 		super();
 		this.userId = userId;
 		this.userPw = userPw;
 		this.userName = userName;
+		this.userNick = userNick;
 		this.userEmail = userEmail;
 		this.userPhone = userPhone;
 		this.userGender = userGender;
 		this.userRegDate = userRegDate;
+		this.userCreateDate = userCreateDate;
 		this.userUpdateDate = userUpdateDate;
 	}
-
-
 
 	public String getUserId() {
 		return userId;
@@ -56,6 +56,14 @@ public class MemberDTO {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getUserNick() {
+		return userNick;
+	}
+
+	public void setUserNick(String userNick) {
+		this.userNick = userNick;
 	}
 
 	public String getUserEmail() {
@@ -82,23 +90,28 @@ public class MemberDTO {
 		this.userGender = userGender;
 	}
 
-	public Date getUserRegDate() {
+	public String getUserRegDate() {
 		return userRegDate;
 	}
 
-	public void setUserRegDate(Date userRegDate) {
+	public void setUserRegDate(String userRegDate) {
 		this.userRegDate = userRegDate;
 	}
 
-	public Date getUserUpdateDate() {
+	public String getUserCreateDate() {
+		return userCreateDate;
+	}
+
+	public void setUserCreateDate(String userCreateDate) {
+		this.userCreateDate = userCreateDate;
+	}
+
+	public String getUserUpdateDate() {
 		return userUpdateDate;
 	}
 
-	public void setUserUpdateDate(Date userUpdateDate) {
+	public void setUserUpdateDate(String userUpdateDate) {
 		this.userUpdateDate = userUpdateDate;
 	}
-	
-	
-	
-	
+
 }

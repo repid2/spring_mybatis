@@ -12,7 +12,7 @@
 		<table border="1" width="700px">
 			<thead>
 				<tr>
-					<th colspan="10">회원목록</th>
+					<th colspan="10">회원목록 (총 인원수 : ${cnt})</th>
 				</tr>
 			</thead>
 			<tbody>

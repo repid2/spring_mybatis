@@ -20,15 +20,17 @@ public class MemberServiceImpl implements MemberService{
 		return memberdao.memberList();
 	}
 
-	@Override
-	public int memberCnt() {
-		return memberdao.memberCnt();
-	}
 
 	@Override
 	public void insertMember(MemberDTO dto) {
 		memberdao.insertMember(dto);
 		
+	}
+	
+
+	@Override
+	public int memberCnt() {
+		return memberdao.memberCnt();
 	}
 
 	@Override

@@ -8,7 +8,7 @@
 	
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	
+	<!-- Oracle과 log4j.xml 사용 -->
 	<bean id="dataSourceSpied" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/> 
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
@@ -25,9 +25,15 @@
 			</bean> 
 		</property> 
 	</bean>
+	
+	<!-- 오라클만 쓸 경우 -->
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	    <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	    <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+	    <property name="username" value="id"/>
+	    <property name="password" value="pwd"/>
+	</bean> -->
 
-	
-	
 	<!-- SqlSessionFactory -->
 	<bean id="sqlSessionFactory" name="sqlSessionFactory" 
 			class="org.mybatis.spring.SqlSessionFactoryBean" >
