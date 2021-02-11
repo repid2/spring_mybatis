@@ -7,15 +7,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper
 	namespace="com.joonbread.springmybatis.member.repository.MemberDAO">
 
+	<resultMap type="memberDto" id="member">
+	 <id property="userId" column="user_id" jdbcType="VARCHAR"/>
+	 <id property="userPw" column="user_pw" jdbcType="VARCHAR" />
+		<id property="userName" column="user_name" jdbcType="VARCHAR" />
+		<id property="userNick" column="user_nick" jdbcType="VARCHAR" />
+		<id property="userEmail" column="user_email" jdbcType="VARCHAR" />
+		<id property="userPhone" column="user_phone" jdbcType="VARCHAR" />
+		<id property="userRegDate" column="user_regDate" jdbcType="VARCHAR" />
+		<id property="userCreateDate" column="user_createDate" jdbcType="DATE" />
+		<id property="userUpdateDate" column="user_updateDate" jdbcType="DATE" />
+	</resultMap>
+
 	<!-- 회원 리스트 -->
-	<select id="memberList" resultType="memberDto">
-		select *
+	<select id="memberList" resultType="memberDto" resultMap="member">
+	
+		select 
+			*
 		from member
-		order by user_updateDate
 	</select>
+	<!-- USER_ID userId,
+			USER_PW userPw,
+			USER_NAME userName,
+			USER_NICK userNick,
+			USER_EMAIL userEmail,
+			USER_PHONE userPhone,
+			USER_REGDATE userRegDate,
+			USER_CREATEDATE userCreateDate,
+			USER_UPDATEDATE userUpdateDate -->
 	
 	<!-- 로그인 -->
-	<select id="checkPw" resultType="int">
+	<select id="checkPw" resultType="int" >
 		select count(*)
 		from member
 		where
@@ -39,11 +61,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{userEmail}, 
 		#{userPhone}, 
 		#{userGender},
-		to_date(#{userRegDate},'YYYY-MM-DD'), 
-		sysdate, 
+		#{userRegDate}, 
+		sysdate,
 		sysdate
 		)
 	</insert>
+	
 
 	<!-- 회원정보 확인 -->
 	<select id="viewMember" resultType="memberDto">
@@ -63,6 +86,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		${userUpdateDate}
 		where user_id = ${userId}
 	</update>
+	<!-- 
+	user_pw = #{user_pw},
+		user_email = #{user_email},
+		user_phone = #{user_phone},
+		user_updateDate =
+		${user_updateDate}
+		where user_id = ${user_id} -->
 
 	<delete id="deleteMember">
 		delete from member

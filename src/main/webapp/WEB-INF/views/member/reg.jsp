@@ -17,25 +17,31 @@
 			<form method="post" action="/member/regUpdate.do" role="form" class="form-horizontal">
 				<div class="form-group reg_total">
 				<label for="userId" class="col-sm-3 control-label">아이디 (*)</label> 
-					<div class="reg_input col-sm-9">
+					<div class="reg_input col-sm-9"><!-- 
+						<input type="text" id="user_id" name="user_id" class="form-control" maxlength="13" required/> -->
+						
 						<input type="text" id="userId" name="userId" class="form-control" maxlength="13" required/>
 					</div>
 				</div>
 				<div class="form-group reg_total">
 					<label for="userPw" class="col-sm-3 control-label" >비밀번호 (*)</label> 
-					<div class="reg_input col-sm-9">
+					<div class="reg_input col-sm-9"><!-- 
+						<input type="password" id="user_pw" name="user_pw"  class="form-control" maxlength="20"  required/> -->
 						<input type="password" id="userPw" name="userPw"  class="form-control" maxlength="20"  required/>
 					</div>
 				</div>
 				<div class="form-group reg_total">
 					<label for="userPwChk" class="col-sm-3 control-label">비밀번호 확인 (*) </label>
-					<div class="reg_input col-sm-9">
+					<div class="reg_input col-sm-9"><!-- 
+						<input type="password" id="user_pwChk"  class="form-control" maxlength="20" required/> -->
+						
 						<input type="password" id="userPwChk"  class="form-control" maxlength="20" required/>
 					</div>
 				</div>
 				<div class="form-group reg_total">
 					<label for="userName" class="col-sm-3 control-label">이름 (*)</label>
-					<div class="reg_input col-sm-9">
+					<div class="reg_input col-sm-9"><!-- 
+						<input type="text" id="user_name" name="user_name"  class="form-control" maxlength="13"  required/> -->
 						<input type="text" id="userName" name="userName"  class="form-control" maxlength="13"  required/>
 					</div>
 				</div>

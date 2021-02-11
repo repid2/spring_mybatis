@@ -16,11 +16,13 @@
 			<form action="member/login.do" method="post" id="login_frm" class="form-horizontal">
 				<div class="form-group login_input">
 				    <div class="col-sm-12">
+				    		<!-- <input type="text" class="form-control" name="user_id" id="user_id" placeholder="아이디를 입력하세요"> -->
 				    		<input type="text" class="form-control" name="userId" id="userId" placeholder="아이디를 입력하세요">
 					</div>
 				</div>	
 				<div class="form-group login_input">
 		    		<div class="col-sm-12">
+				    	<!-- <input type="password" class="form-control" name="user_pw" id="user_pw" placeholder="비밀번호를 입력하세요"> -->
 				    	<input type="password" class="form-control" name="userPw" id="userPw" placeholder="비밀번호를 입력하세요">
 					</div>
 				</div>	

@@ -34,14 +34,14 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public boolean checkPw(String user_id, String user_pw) {
-		return memberdao.checkPw(user_id, user_pw);
+	public boolean checkPw(String userId, String userPw) {
+		return memberdao.checkPw(userId, userPw);
 		
 	}
 	
 	@Override
-	public MemberDTO viewMember(String user_id) {
-		return memberdao.viewMember(user_id);
+	public MemberDTO viewMember(String userId) {
+		return memberdao.viewMember(userId);
 	}
 
 	@Override
@@ -52,8 +52,8 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void deleteMember(String user_id) {
-		memberdao.deleteMember(user_id);
+	public void deleteMember(String userId) {
+		memberdao.deleteMember(userId);
 		
 	}
 

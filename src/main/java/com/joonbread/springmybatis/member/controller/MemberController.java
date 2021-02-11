@@ -1,5 +1,7 @@
 package com.joonbread.springmybatis.member.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -35,9 +37,9 @@ public class MemberController {
 
 	// 로그인
 	@RequestMapping(value = "/member/login.do", method=RequestMethod.POST )
-	public String memberCheckPw(String user_id, String user_pw) {
+	public String memberCheckPw(String userId, String userPw) {
 		
-		boolean result = memberService.checkPw(user_id, user_pw);
+		boolean result = memberService.checkPw(userId, userPw);
 		
 		if(result == true) {
 			// System.out.println("맞음");
@@ -54,6 +56,8 @@ public class MemberController {
 	public String memberList(Model model) {
 
 		List<MemberDTO> list = memberService.memberList();
+		System.out.println(list.size());
+		
 		int cnt = memberService.memberCnt();
 		
 		System.out.println(cnt);
@@ -92,6 +96,15 @@ public class MemberController {
 	// 회원 정보 삽입
 	@RequestMapping(value= "/member/insert.do", method=RequestMethod.POST )
 	public String memberInsert(@ModelAttribute MemberDTO dto) {
+		
+		//SimpleDateFormat format = new SimpleDateFormat("yyyymmdd");
+		//Date date=  new Date();
+		
+		//String time = format.format(date);
+		
+		//dto.setUser_createDate(time);
+		//dto.setUser_updateDate(time);
+		
 		
 		memberService.insertMember(dto);
 		logger.info("회원가입 성공");

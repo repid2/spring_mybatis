@@ -18,6 +18,16 @@
 			<tbody>
 				<c:forEach var="dto" items="${list}" varStatus="status">
 					<tr>
+						<%-- <td>${status.index+1}</td>
+						<td>${dto.user_id}</td>
+						<td>${dto.user_name}</td>
+						<td>${dto.user_email}</td>
+						<td>${dto.user_phone}</td>
+						<td>${dto.user_gender}</td>
+						<td>${dto.user_regDate}</td>
+						<td>${dto.user_updateDate}</td>
+						<td><span class="user_mod">수정</span></td>
+						<td><span class="user_del">삭제</span></td> --%>
 						<td>${status.index+1}</td>
 						<td>${dto.userId}</td>
 						<td>${dto.userName}</td>

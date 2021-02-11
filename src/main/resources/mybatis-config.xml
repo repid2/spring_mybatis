@@ -7,6 +7,8 @@
  	
  		<!-- 언더바 처리 -->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+        
+        <setting name="callSettersOnNulls" value="true"/>
     </settings>
     
     <typeAliases>
