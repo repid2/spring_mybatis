@@ -1,19 +1,28 @@
 @charset "UTF-8";
 
-.login_frm_box {
-	 position:absolute;
-	 top: calc(50% - 105px);
-     left: calc(50% - 100px); 
+/* 회원 */
+
+#login_frm_box {	
+	position: absolute;
+    top: calc(50% - 81px);
+    left: calc(50% - 110px);
 } 
 
-.reg_frm_box {
-	 position:relative;
-	 top: calc(50% - 435px);
-     left: calc(50% - 555px);
-	
+.userform {
+	position: relative;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.reg_btn {
+	text-align: center;
 }
 
 .login_btn {
 	text-align:center;
 	
+}
+
+.btn_area {
+	text-align: center;
 }

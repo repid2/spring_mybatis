@@ -21,20 +21,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 회원 리스트 -->
 	<select id="memberList" resultType="memberDto" resultMap="member">
-	
 		select 
 			*
 		from member
 	</select>
-	<!-- USER_ID userId,
-			USER_PW userPw,
-			USER_NAME userName,
-			USER_NICK userNick,
-			USER_EMAIL userEmail,
-			USER_PHONE userPhone,
-			USER_REGDATE userRegDate,
-			USER_CREATEDATE userCreateDate,
-			USER_UPDATEDATE userUpdateDate -->
 	
 	<!-- 로그인 -->
 	<select id="checkPw" resultType="int" >
@@ -67,7 +57,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		)
 	</insert>
 	
-
 	<!-- 회원정보 확인 -->
 	<select id="viewMember" resultType="memberDto">
 		select *

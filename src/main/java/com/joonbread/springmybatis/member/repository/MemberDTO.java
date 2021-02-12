@@ -4,16 +4,6 @@ import java.util.Date;
 
 public class MemberDTO {
 
-	/*
-	 * private String user_id; private String user_pw; private String user_name;
-	 * private String user_nick; private String user_email; private String
-	 * user_phone; private String user_gender; private String user_regDate;
-	 * 
-	 * private String user_createDate; private String user_updateDate;
-	private Date user_createDate; 
-	private Date user_updateDate;
-	 */
-	
 	private String userId;
 	private String userPw;
 	private String userName;
@@ -22,16 +12,12 @@ public class MemberDTO {
 	private String userPhone;
 	private String userGender;
 	private String userRegDate;
-	
 	private Date userCreateDate; 
 	private Date userUpdateDate;
 	
 	public MemberDTO() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
 	
 	public MemberDTO(String userId, String userPw, String userName, String userNick, String userEmail, String userPhone,
 			String userGender, String userRegDate, Date userCreateDate, Date userUpdateDate) {
