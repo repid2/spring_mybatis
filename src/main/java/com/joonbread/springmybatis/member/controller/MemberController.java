@@ -168,11 +168,11 @@ public class MemberController {
 
 	// 삭제
 	@RequestMapping("/member/delete.do")
-	public String memberDelete(String user_id) {
+	public String memberDelete(@ModelAttribute MemberDTO dto) {
 		
-		memberService.deleteMember(user_id);
+		memberService.deleteMember(dto.getUserId());
 		
-		return "redirect:/member/list.do";
+		return "redirect:/main.do";
 	}
 	
 	
