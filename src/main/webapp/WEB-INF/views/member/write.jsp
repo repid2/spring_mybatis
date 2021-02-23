@@ -14,11 +14,23 @@
 
 	<div id="container">
 		<div class="userModfrm_box">
-			<form method="post" id="userModfrm" name="userModfrm" role="form" class="userform form-horizontal">
+			<form action="/member/update.do" method="post" id="userModfrm" name="userModfrm" role="form" class="userform form-horizontal">
 				<div class="form-group mypage_total">
 				<label for="userId" class="col-sm-12 control-label">아이디</label> 
 					<div class="col-sm-12">
 						<input type="text" id="userId" name="userId" class="form-control" value="${dto.userId}" maxlength="13" readonly/>
+					</div>
+				</div>
+				<div class="form-group mypage_total">
+				<label for="userPw" class="col-sm-12 control-label">비밀번호</label> 
+					<div class="col-sm-12">
+						<input type="password" id="userPw" name="userPw" class="form-control" value="${dto.userPw}" maxlength="15" />
+					</div>
+				</div>
+				<div class="form-group mypage_total">
+				<label for="userPwChk" class="col-sm-12 control-label">비밀번호 확인</label> 
+					<div class="col-sm-12">
+						<input type="password" id="userPwChk" name="userPwChk" class="form-control" maxlength="15" />
 					</div>
 				</div>
 				<div class="form-group mypage_total">
@@ -42,15 +54,15 @@
 				<div class="form-group mypage_total">
 				<label for="userEmail" class="col-sm-12 control-label">이메일</label> 
 					<div class="col-sm-12">
-						<input type="text" id="userEmail" name="userEmail" class="form-control" value="${dto.userEmail}" maxlength="13" />
+						<input type="text" id="userEmail" name="userEmail" class="form-control" value="${dto.userEmail}"  />
 					</div>
 				</div>
 				<div class="form-group mypage_total">
 				<label for="userGender" class="col-sm-12 control-label">성별</label>
 					<div class="col-sm-12">
-						<input type="radio" value="1" class="user_radio" name="userGender" ${dto.userGender eq '1' ? 'checked' : '' } readonly />남
+						<input type="radio" value="1" class="user_radio" name="userGender" ${dto.userGender eq '1' ? 'checked' : '' } onclick="return false;"/>남
 							&nbsp;
-						<input type="radio" value="2" class="user_radio" name="userGender" ${dto.userGender eq '2' ? 'checked' : '' } readonly />녀
+						<input type="radio" value="2" class="user_radio" name="userGender" ${dto.userGender eq '2' ? 'checked' : '' } onclick="return false;" />녀
 					</div> 
 				</div>
 				
@@ -62,7 +74,7 @@
 				</div>
 				<div class="form-group mypage_total">
 					<div class="col-sm-12 btn_area" >
-						<input type="button" class="btn btn-primary" value="회원정보 수정" id = "myInfoUpdate" />
+						<input type="button" class="btn btn-primary" value="회원정보 수정" id="myUpdate" />
 					</div>
 				</div>
 			</form>

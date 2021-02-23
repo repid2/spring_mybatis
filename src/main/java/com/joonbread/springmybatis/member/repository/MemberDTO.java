@@ -13,7 +13,6 @@ public class MemberDTO {
 	private String userGender;
 	private String userRegDate;
 	private Date userCreateDate; 
-	private Date userUpdateDate;
 	
 	public MemberDTO() {
 		// TODO Auto-generated constructor stub
@@ -31,7 +30,6 @@ public class MemberDTO {
 		this.userGender = userGender;
 		this.userRegDate = userRegDate;
 		this.userCreateDate = userCreateDate;
-		this.userUpdateDate = userUpdateDate;
 	}
 
 
@@ -91,15 +89,5 @@ public class MemberDTO {
 	public void setUserCreateDate(Date userCreateDate) {
 		this.userCreateDate = userCreateDate;
 	}
-	public Date getUserUpdateDate() {
-		return userUpdateDate;
-	}
-	public void setUserUpdateDate(Date userUpdateDate) {
-		this.userUpdateDate = userUpdateDate;
-	}
 	 
-	
-	
-
-	
 }

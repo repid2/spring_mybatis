@@ -24,5 +24,34 @@ $(document).ready(function(){
 	
 	});
 
+	// 비번 중복 체크
+	function checkPwChk(){
+		var pwd = $("#userPw").val();
+		var pwchk = $("#userPwChk").val();
+		
+		if(pwd != pwchk){
+			alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
+			$("#userPw").val("");
+			$("#userPwChk").val("");
+			$("#userPw").focus();
+			return false;
+		}else{
+
+			//console.log('비번중복체크');
+			
+			return true;
+		}
+		
+	}	// 비번 중복 체크
+
+	// 수정 버튼 클릭 시 
+	$("#myUpdate").click(function(){
+		if(checkPwChk()){
+			document.userModfrm.submit();
+		}
+		
+		
+	});
+
 
 });

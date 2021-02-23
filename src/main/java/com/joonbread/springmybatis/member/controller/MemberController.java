@@ -139,30 +139,27 @@ public class MemberController {
 		String userId = (String)session.getAttribute("userId");
 		
 		if(userId.equals("")) {
-			logger.info("회원 정보 수정");
-			model.addAttribute("dto",dto);
+			// logger.info("회원 정보 수정");
+			// model.addAttribute("dto",dto);
 			
-			return "redirect:/member/view.do";
+			// return "redirect:/member/view.do";
 		}
-		
-		
 		logger.info("회원 가입");
 		
-		// memberService.insertMember(dto);
-		// logger.info("회원가입 성공");
 		return "redirect:/main.do";
 		
-		
-		
-
 	}
 
 	// 회원 정보 수정
 	@RequestMapping("/member/update.do")
 	public String memberUpdate(@ModelAttribute MemberDTO dto) {
+		
+		System.out.println(dto.getUserEmail());
+		System.out.println(dto.getUserPhone());
+		
 		memberService.updateMember(dto);
 
-		return "redirect:/member/list.do";
+		return "redirect:/member/view.do";
 
 	}
 

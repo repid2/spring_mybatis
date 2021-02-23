@@ -16,7 +16,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<id property="userPhone" column="user_phone" jdbcType="VARCHAR" />
 		<id property="userRegDate" column="user_regDate" jdbcType="VARCHAR" />
 		<id property="userCreateDate" column="user_createDate" jdbcType="DATE" />
-		<id property="userUpdateDate" column="user_updateDate" jdbcType="DATE" />
 	</resultMap>
 
 	<!-- 회원 리스트 -->
@@ -52,7 +51,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{userPhone}, 
 		#{userGender},
 		#{userRegDate}, 
-		sysdate,
 		sysdate
 		)
 	</insert>
@@ -70,10 +68,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update member set
 		user_pw = #{userPw},
 		user_email = #{userEmail},
-		user_phone = #{userPhone},
-		user_updateDate =
-		${userUpdateDate}
-		where user_id = ${userId}
+		user_phone = #{userPhone}
+		where user_id = #{userId}
 	</update>
 	<!-- 
 	user_pw = #{user_pw},
